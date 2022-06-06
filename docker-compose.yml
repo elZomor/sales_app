@@ -36,9 +36,10 @@ services:
   web:
     container_name: server
     restart: always
+    command: "/bin/bash /entrypoint.sh"
     build: .
     volumes:
-      - .:/app
+      - .:/app:rw
     env_file:
       - .env
     depends_on:

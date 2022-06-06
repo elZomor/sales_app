@@ -1,4 +1,5 @@
 from django.contrib import admin
+from import_export.admin import ImportExportModelAdmin
 
 from apps.required_app.models import Engineer, Department, Client, Segment, SubSegment, RequiredModel
 
@@ -24,6 +25,17 @@ class StudyEngineerInline(admin.TabularInline):
 class RequiredAdmin (admin.ModelAdmin):
     inlines = [ClientInline, SalesEngineerInline, StudyEngineerInline]
     exclude = ['client', 'sales_engineer', 'study_engineer']
+    actions = ['download_template']
+    actions_on_top = ['download_template']
+    action_form = ['download_t']
+
+    def download_template(self, request, queryset):
+        print("Hello")
+
+    def download_t(self, request, queryset):
+        print("Hello")
+
+
 
 
 admin.site.register(Engineer)

@@ -38,6 +38,7 @@ PROJECT_APPS = [
 
 PYTHON_APPS = [
     'django_extensions',
+    'import_export'
 ]
 
 
