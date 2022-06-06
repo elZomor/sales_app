@@ -98,6 +98,7 @@ DATABASES = {
 }
 
 #LOGGING
+LOGS_FOLDER = os.path.join(BASE_DIR, "Logs")
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -115,7 +116,7 @@ LOGGING = {
         'required_logs_handler': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'logs/required_logs.log',
+            'filename': os.path.join(LOGS_FOLDER, 'required_logs.log'),
             'formatter': 'verbose'
 
         }
