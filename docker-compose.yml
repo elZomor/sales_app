@@ -35,6 +35,7 @@ services:
       - ./database_config/init.sql:/data/application/init.sql
   web:
     container_name: server
+    restart: always
     build: .
     volumes:
       - .:/app
